@@ -7,7 +7,9 @@ function createServer() {
     version: '1.0.0'
   })
 
-  server.registerResource('', '', )
+  // Prompts : toutes les commandes de artchat
+  // Ressources : toutes les ressources de Nuxt Content
+  // Tools : toutes les actions
 
   return server
 }
