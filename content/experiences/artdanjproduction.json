@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Freelancer",
+    "es": "Autónomo",
+    "fr": "Auto-entrepreneur"
+  },
+  "description": {
+    "en": "As a freelancer, I designed, developed, and maintained various personal projects, exploring new programming languages and technologies. I also write documentation and articles related to my projects, fix bugs, and ensure their smooth operation in production. Additionally, I manage my Proxmox and Docker-based homelab, hosting multiple services, and set up network infrastructure to optimize performance and stability.",
+    "es": "Como autónomo, he diseñado, desarrollado y mantenido diversos proyectos personales, explorando nuevos lenguajes de programación y tecnologías. También redacto documentación y artículos relacionados con mis proyectos, soluciono errores y aseguro su correcto funcionamiento en producción. Además, administro mi homelab basado en Proxmox y Docker, alojando múltiples servicios y configurando la infraestructura de red para optimizar rendimiento y estabilidad.",
+    "fr": "En tant qu'auto-entrepreneur, j'ai conçu, développé et maintenu divers projets personnels, explorant de nouveaux langages de programmation et technologies. Je rédige également la documentation et des articles relatifs à mes projets, tout en corrigeant les bugs et en assurant leur bon fonctionnement en production. J'ai aussi administré mon homelab basé sur Proxmox et Docker, hébergeant plusieurs services, et configuré l'infrastructure réseau afin d'optimiser performances et stabilité."
+  },
+  "company": "ArtDanjProduction",
+  "companyUrl": "https://go.arthurdanjou.fr/website",
+  "location": "Paris, France",
+  "startDate": "2022-02",
+  "tags": ["Java", "TypeScript", "HomeLab", "Docker"]
+}

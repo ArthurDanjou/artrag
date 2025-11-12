@@ -1,0 +1,18 @@
+{
+  "title": {
+    "en": "Sales Assistant II",
+    "es": "Vendedor Asistente II",
+    "fr": "Vendeur Assistant II"
+  },
+  "description": {
+    "en": "As part of my student job at Picard, I welcomed and advised customers while handling product restocking and in-store deliveries. I placed orders according to overall stock, monitored the cold chain, and maintained freezer cleanliness, ensuring product quality and safety.",
+    "es": "Como parte de mi trabajo estudiantil en Picard, recibía y asesoraba a los clientes, además de encargarme del reabastecimiento y la entrega de productos en la tienda. Realizaba pedidos según el stock general, supervisaba la cadena de frío y mantenía limpios los congeladores, garantizando así la calidad y seguridad de los productos.",
+    "fr": "Dans le cadre de mon job étudiant chez Picard, j'accueillais et conseillais les clients tout en assurant le réassort et la livraison des produits en magasin. Je passais les commandes en fonction du stock global, surveillais la chaîne du froid et veillais à la propreté des congélateurs, garantissant ainsi la qualité et la sécurité des produits."
+  },
+  "company": "Picard Surgelés",
+  "companyUrl": "https://picard.fr",
+  "location": "Paris, France",
+  "startDate": "2022-09",
+  "endDate": "2024-10",
+  "tags": ["Sales", "Customer Service", "Retail"]
+}

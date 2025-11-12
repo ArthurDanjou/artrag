@@ -1,0 +1,18 @@
+{
+  "title": {
+    "en": "Data Analyst Intern",
+    "es": "Practicante de Analista de Datos",
+    "fr": "Data Analyst Stagiaire"
+  },
+  "description": {
+    "en": "At Sevetys, I worked as a Data Analyst on topics related to client and patient data. My responsibilities included Python development using PySpark on Microsoft Azure, data modeling based on business needs, and ensuring data quality. This experience allowed me to deepen my data engineering skills while working autonomously in a demanding cloud-based environment.",
+    "es": "En Sevetys, trabajé como Analista de Datos en proyectos relacionados con datos de clientes y pacientes. Me encargaba del desarrollo en Python con PySpark sobre Microsoft Azure, de la modelización de datos según las necesidades del negocio y de garantizar la calidad de los datos. Esta experiencia me permitió fortalecer mis competencias en ingeniería de datos y trabajar con autonomía en un entorno exigente en la nube.",
+    "fr": "Chez Sevetys, j'ai travaillé en tant que Data Analyst sur des problématiques liées aux données clients et patients. J'étais chargé du développement en Python avec PySpark sur Microsoft Azure, de la modélisation des données selon les besoins métier, ainsi que de l'assurance qualité des données. Cette expérience m'a permis d'approfondir mes compétences en ingénierie des données et de travailler en autonomie dans un environnement cloud exigeant."
+  },
+  "company": "Sevetys",
+  "companyUrl": "https://sevetys.fr",
+  "location": "Paris, France",
+  "startDate": "2025-06",
+  "endDate": "2025-07",
+  "tags": ["Python", "PySpark", "Microsoft Azure", "DQ"]
+}

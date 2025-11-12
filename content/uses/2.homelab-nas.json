@@ -1,0 +1,9 @@
+{
+  "name": "UGREEN NASync DXP4800 Plus",
+  "description": {
+    "en": "I bought a UGREEN 4-bay NAS to store and manage my data centrally, while ensuring regular backups and optimal accessibility. For now, I've installed 2 8TB hard drives, but I plan to add two more drives in the future to increase storage capacity.",
+    "fr": "J'ai acheté un NAS UGreen 4 baies pour stocker et gérer mes données de manière centralisée, tout en assurant des sauvegardes régulières et une accessibilité optimale. Pour le moment, j'ai installé 2 disques durs de 8To, mais je prévois d'ajouter deux autres disques à l'avenir pour augmenter la capacité de stockage.",
+    "es": "He comprado un NAS UGreen de 4 bahías para almacenar y gestionar mis datos de manera centralizada, asegurando copias de seguridad regulares y una accesibilidad óptima. Por el momento, he instalado 2 discos duros de 8To, pero planeo agregar otros dos discos en el futuro para aumentar la capacidad de almacenamiento."
+  },
+  "category": "homelab"
+}

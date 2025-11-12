@@ -1,0 +1,174 @@
+{
+  "body": [
+    {
+      "id": "programmation",
+      "name": {
+        "en": "Programming",
+        "fr": "Programmation",
+        "es": "Programación"
+      },
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "i-logos-typescript-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "i-logos-javascript"
+        },
+        {
+          "name": "HTML5",
+          "icon": "i-logos-html-5"
+        },
+        {
+          "name": "CSS3",
+          "icon": "i-logos-css-3"
+        },
+        {
+          "name": "Java",
+          "icon": "i-logos-java"
+        },
+        {
+          "name": "Python",
+          "icon": "i-logos-python"
+        },
+        {
+          "name": "R Lang",
+          "icon": "i-logos-r-lang"
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "name": {
+        "en": "Frontend Development",
+        "fr": "Développement Frontend",
+        "es": "Desarrollo Frontend"
+      },
+      "items": [
+        {
+          "name": "Nuxt Stack",
+          "icon": "i-logos-nuxt-icon"
+        },
+        {
+          "name": "Vue",
+          "icon": "i-logos-vue"
+        },
+        {
+          "name": "Vite",
+          "icon": "i-logos-vitejs"
+        },
+        {
+          "name": "TailwindCss",
+          "icon": "i-logos-tailwindcss-icon"
+        }
+      ]
+    },
+    {
+      "id": "devops",
+      "name": {
+        "en": "DevOps & Infrastructure",
+        "fr": "DevOps & Infrastructure",
+        "es": "DevOps & Infrastructure"
+      },
+      "items": [
+        {
+          "name": "Docker",
+          "icon": "i-logos-docker-icon"
+        },
+        {
+          "name": "Git",
+          "icon": "i-logos-git-icon"
+        },
+        {
+          "name": "GitHub",
+          "icon": "i-logos-github-icon"
+        },
+        {
+          "name": "Traefik",
+          "icon": "i-devicon-traefikproxy"
+        },
+        {
+          "name": "Proxmox",
+          "icon": "i-devicon-proxmox-wordmark"
+        },
+        {
+          "name": "Linux",
+          "icon": "i-logos-linux-tux"
+        },
+        {
+          "name": "CloudFlare",
+          "icon": "i-logos-cloudflare-icon"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": {
+        "en": "BackEnd & Data",
+        "fr": "BackEnd & Data",
+        "es": "BackEnd & Data"
+      },
+      "items": [
+        {
+          "name": "AdonisJs",
+          "icon": "i-logos-adonisjs-icon"
+        },
+        {
+          "name": "Nuxt (powered by Nitro)",
+          "icon": "i-logos-nuxt-icon"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "i-logos-postgresql"
+        },
+        {
+          "name": "Redis",
+          "icon": "i-logos-redis"
+        },
+        {
+          "name": "MariaDB",
+          "icon": "i-logos-mariadb-icon"
+        }
+      ]
+    },
+    {
+      "id": "python-frameworks",
+      "name": {
+        "en": "Python Frameworks",
+        "fr": "Frameworks Python",
+        "es": "Frameworks Python"
+      },
+      "items": [
+        {
+          "name": "Tensorflow",
+          "icon": "i-logos-tensorflow"
+        },
+        {
+          "name": "PyTorch",
+          "icon": "i-logos-pytorch-icon"
+        },
+        {
+          "name": "Scikit-Learn",
+          "icon": "i-devicon-scikitlearn"
+        },
+        {
+          "name": "Numpy",
+          "icon": "i-devicon-numpy"
+        },
+        {
+          "name": "MatPlotLib",
+          "icon": "i-devicon-matplotlib"
+        },
+        {
+          "name": "Seaborn",
+          "icon": "i-logos-seaborn-icon"
+        },
+        {
+          "name": "Pandas",
+          "icon": "i-devicon-pandas"
+        }
+      ]
+    }
+  ]
+}
