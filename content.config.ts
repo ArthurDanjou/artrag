@@ -61,7 +61,7 @@ export default defineContentConfig({
     }),
     experiences: defineCollection({
       type: 'data',
-      source: 'experiences/*.json',
+      source: 'experiences/*.md',
       schema: z.object({
         title: z.object({
           en: z.string(),

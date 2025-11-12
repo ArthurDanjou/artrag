@@ -1,5 +1,5 @@
 {
-  "name": "artrag",
+  "name": "artmcp",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,13 +12,19 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ai-sdk/gateway": "^2.0.0-beta.52",
+    "@ai-sdk/mcp": "^1.0.0-beta.15",
+    "@ai-sdk/vue": "^3.0.0-beta.99",
+    "@modelcontextprotocol/sdk": "^1.21.1",
     "@nuxt/content": "3.8.0",
     "@nuxt/eslint": "1.10.0",
     "@nuxthub/core": "^0.9.0",
+    "ai": "^6.0.0-beta.99",
     "better-sqlite3": "^12.4.1",
     "nuxt": "4.2.1",
     "vue": "3.5.24",
-    "vue-router": "4.6.3"
+    "vue-router": "4.6.3",
+    "zod": "3"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "1.10.0",
