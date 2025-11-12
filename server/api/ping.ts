@@ -1,1 +1,5 @@
-export default eventHandler(() => 'pong')
+export default eventHandler(() => {
+  return {
+    body: 'pong'
+  }
+})
