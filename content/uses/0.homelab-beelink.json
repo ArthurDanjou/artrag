@@ -1,5 +1,0 @@
-{
-  "name": "Beelink EQR6 AMD Ryzen",
-  "description": "I use my Beelink as the main server in my homelab, running Proxmox, to host self-hosted services, run Docker containers, and test open-source tools.",
-  "category": "homelab"
-}

@@ -1,0 +1,5 @@
+---
+name: Notion & Notion Calendar
+description: Notion is my all-in-one tool for note-taking, kanban boards, wikis, and drafts. I use Notion Calendar to sync my databases with my calendar.
+category: software
+---

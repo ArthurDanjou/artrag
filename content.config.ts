@@ -18,26 +18,18 @@ export default defineContentConfig({
     }),
     usesCategories: defineCollection({
       type: 'data',
-      source: 'uses/categories/*.json',
+      source: 'uses/categories/*.md',
       schema: z.object({
         slug: z.string(),
-        name: z.object({
-          en: z.string(),
-          fr: z.string(),
-          es: z.string()
-        })
+        name: z.string()
       })
     }),
     uses: defineCollection({
       type: 'data',
-      source: 'uses/*.json',
+      source: 'uses/*.md',
       schema: z.object({
         name: z.string(),
-        description: z.object({
-          en: z.string(),
-          fr: z.string(),
-          es: z.string()
-        }),
+        description: z.string(),
         category: z.string()
       })
     }),
@@ -47,11 +39,7 @@ export default defineContentConfig({
       schema: z.object({
         body: z.array(z.object({
           id: z.string(),
-          name: z.object({
-            en: z.string(),
-            fr: z.string(),
-            es: z.string()
-          }),
+          name: z.string(), // TODO: replace in content dir
           items: z.array(z.object({
             name: z.string(),
             icon: z.string()
@@ -63,21 +51,13 @@ export default defineContentConfig({
       type: 'data',
       source: 'experiences/*.md',
       schema: z.object({
-        title: z.object({
-          en: z.string(),
-          fr: z.string(),
-          es: z.string()
-        }),
+        title: z.string(),
         company: z.string(),
         companyUrl: z.string().url().optional(),
         startDate: z.string(),
         endDate: z.string().optional(),
         location: z.string(),
-        description: z.object({
-          en: z.string(),
-          fr: z.string(),
-          es: z.string()
-        }),
+        description: z.string(),
         tags: z.array(z.string())
       })
     })

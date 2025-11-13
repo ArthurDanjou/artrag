@@ -1,5 +1,0 @@
-{
-  "name": "Self-Hosted Services",
-  "description": "I run services such as Uptime Kuma, Beszel, Traefik, Cloudflare, MySpeed, AdGuard Home, Portainer, Home Assistant, Minio, Immich, Vaultwarden, Tailscale, Palmr and Cap.so",
-  "category": "homelab"
-}
