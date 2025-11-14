@@ -60,6 +60,17 @@ export default defineContentConfig({
         description: z.string(),
         tags: z.array(z.string())
       })
+    }),
+    education: defineCollection({
+      type: 'data',
+      source: 'education/*.md',
+      schema: z.object({
+        degree: z.string(),
+        institution: z.string(),
+        startDate: z.string(),
+        endDate: z.string().optional(),
+        location: z.string()
+      })
     })
   }
 })
