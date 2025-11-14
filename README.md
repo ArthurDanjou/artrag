@@ -1,35 +1,89 @@
-# Hello Edge
+# ArtMCP - Arthur Danjou's MCP Server
 
-A minimal [Nuxt](https://nuxt.com) starter deployed on the Edge using [NuxtHub](https://hub.nuxt.com).
+A comprehensive [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server exposing professional profile information about Arthur Danjou. Built with [Nuxt](https://nuxt.com) and deployed on [NuxtHub](https://hub.nuxt.com) at the Edge.
 
-https://hello.nuxt.dev
+🔗 **Live Server**: https://mcp.arthurdanjou.fr
 
-<a href="https://hello.nuxt.dev">
-<img src="https://github.com/nuxt-hub/hello-edge/assets/904724/99d1bd54-ef7e-4ac9-83ad-0a290f85edcf" alt="Hello World template for NuxtHub" />
-</a>
+## 🎯 Features
 
-## Features
+### MCP Resources
 
-- Server-Side rendering on Cloudflare Workers
-- ESLint setup
-- Ready to add a database, blob and KV storage
-- One click deploy on 275+ locations for free
+The server exposes the following resources through the Model Context Protocol:
 
-## Setup
+- **📊 Skills** (`resource://artmcp/skills`) - Complete list of technical skills (programming languages, frameworks, tools)
+- **💼 Experiences** (`resource://artmcp/experiences`) - Professional work experience and projects
+- **🚀 Projects** (`resource://artmcp/projects`) - Portfolio of personal and professional projects
+- **🎓 Education** (`resource://artmcp/education`) - Academic background and degrees
+- **🌐 Languages** (`resource://artmcp/languages`) - Spoken languages with proficiency levels
+- **🏆 Certifications** (`resource://artmcp/certifications`) - Professional certifications and achievements
+- **👤 Profile** (`resource://artmcp/profile`) - Comprehensive profile with bio, location, availability, career goals, and work preferences
+- **🎨 Hobbies** (`resource://artmcp/hobbies`) - Personal interests and activities
+- **📞 Contact** (`resource://artmcp/contact`) - Professional contact information and social links
+- **🛠️ Uses** (`resource://artmcp/uses`) - Tools, hardware, and software setup
+- **📈 Activity** (`resource://artmcp/activity`) - Real-time coding activity (Discord integration)
+- **⏱️ Wakatime** (`resource://artmcp/wakatime`) - Coding statistics powered by Wakatime
+- **🏠 Status Page** (`resource://artmcp/status_page`) - Homelab services uptime and incidents
 
-Make sure to install the dependencies with [pnpm](https://pnpm.io/installation#using-corepack):
+### MCP Tools
+
+- **`get_resume_link`** - Get download link for resume in English or French
+- **`get_uses_by_category`** - Filter uses by category (homelab, ide, hardware, software)
+
+### MCP Prompts
+
+Pre-configured prompts for common queries about:
+- Resume generation
+- Skills and expertise
+- Projects showcase
+- Real-time activity
+- Contact information
+- And more...
+
+## 🏗️ Architecture
+
+This project uses:
+- **Nuxt 4** with Nitro for server-side rendering
+- **@nuxt/content** for content management
+- **@modelcontextprotocol/sdk** for MCP server implementation
+- **NuxtHub** for edge deployment on Cloudflare Workers
+- **Zod** for schema validation
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ or Bun
+- pnpm 10.12.1+
+
+### Installation
 
 ```bash
+# Install dependencies
 pnpm install
 ```
 
-You can update the main text displayed by creating a `.env`:
+### Environment Variables
+
+Create a `.env` file (optional):
 
 ```bash
-NUXT_PUBLIC_HELLO_TEXT="Hello my world!"
+# Discord integration (optional)
+NUXT_DISCORD_USER_ID=""
+NUXT_DISCORD_ID=""
+NUXT_DISCORD_TOKEN=""
+
+# Wakatime integration (optional)
+NUXT_WAKATIME_USER_ID=""
+NUXT_WAKATIME_CODING=""
+NUXT_WAKATIME_EDITORS=""
+NUXT_WAKATIME_LANGUAGES=""
+NUXT_WAKATIME_OS=""
+
+# Status page (optional)
+NUXT_STATUS_PAGE=""
 ```
 
-## Development Server
+### Development
 
 Start the development server on `http://localhost:3000`:
 
@@ -37,7 +91,7 @@ Start the development server on `http://localhost:3000`:
 pnpm dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -45,16 +99,111 @@ Build the application for production:
 pnpm build
 ```
 
-## Deploy
+### Deployment
 
-
-Deploy the application on the Edge with [NuxtHub](https://hub.nuxt.com) on your Cloudflare account:
+Deploy to NuxtHub/Cloudflare:
 
 ```bash
-npx nuxthub deploy
+pnpm deploy
 ```
 
-Then checkout your server logs, analaytics and more in the [NuxtHub Admin](https://admin.hub.nuxt.com).
+## 📚 API Endpoints
 
-You can also deploy using [Cloudflare Pages CI](https://hub.nuxt.com/docs/getting-started/deploy#cloudflare-pages-ci).
+All resources are also available as REST API endpoints:
+
+- `GET /api/skills`
+- `GET /api/experiences`
+- `GET /api/projects`
+- `GET /api/educations`
+- `GET /api/languages`
+- `GET /api/certifications`
+- `GET /api/profile`
+- `GET /api/hobbies`
+- `GET /api/contact`
+- `GET /api/uses`
+- `GET /api/uses_by_category?categoryName={category}`
+- `GET /api/activity`
+- `GET /api/wakatime`
+- `GET /api/status_page`
+- `GET /api/resumes/{en|fr}` - Download resume
+
+## 🧪 Development
+
+### Linting
+
+```bash
+pnpm lint
+```
+
+### Type Checking
+
+```bash
+npx tsc --noEmit --skipLibCheck
+```
+
+## 📂 Content Structure
+
+Content is managed in the `content/` directory:
+
+```
+content/
+├── skills.json              # Technical skills
+├── languages.json           # Spoken languages
+├── certifications.json      # Professional certifications
+├── profile.json             # Comprehensive profile info
+├── contact.json             # Contact information
+├── hobbies.md              # Personal interests
+├── experiences/*.md         # Work experiences
+├── projects/*.md           # Project portfolio
+├── education/*.md          # Academic background
+└── uses/*.md               # Tools and setup
+```
+
+## 🔧 Technologies
+
+- **Frontend/Backend**: Nuxt 4, Vue 3, Nitro
+- **MCP**: Model Context Protocol SDK
+- **Content**: Nuxt Content with better-sqlite3
+- **Styling**: TailwindCSS (ready to add)
+- **Deployment**: Cloudflare Workers via NuxtHub
+- **Validation**: Zod schemas
+
+## 📖 MCP Integration
+
+To use this server with an MCP client:
+
+1. Configure your MCP client to connect to `https://mcp.arthurdanjou.fr/mcp`
+2. Or use the API directly via REST endpoints
+
+Example MCP client configuration:
+```json
+{
+  "mcpServers": {
+    "artmcp": {
+      "url": "https://mcp.arthurdanjou.fr/mcp"
+    }
+  }
+}
+```
+
+## 🤝 Contributing
+
+This is a personal portfolio project. Feel free to use it as inspiration for your own MCP server!
+
+## 📝 License
+
+Private project - All rights reserved
+
+## 👤 About
+
+**Arthur Danjou**
+- Software Engineer & Mathematics Student
+- 📍 Paris, France
+- 🔗 [LinkedIn](https://go.arthurdanjou.fr/linkedin)
+- 🐙 [GitHub](https://go.arthurdanjou.fr/github)
+- 📧 [Email](https://go.arthurdanjou.fr/mail-pro)
+
+---
+
+Built with ❤️ using Nuxt and the Model Context Protocol
 

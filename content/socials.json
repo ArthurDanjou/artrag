@@ -1,0 +1,23 @@
+{
+  "github": {
+    "username": "ArthurDanjou",
+    "url": "https://go.arthurdanjou.fr/github",
+    "stats": {
+      "note": "Real-time stats available via GitHub API"
+    }
+  },
+  "linkedin": {
+    "url": "https://go.arthurdanjou.fr/linkedin"
+  },
+  "twitter": {
+    "url": "https://go.arthurdanjou.fr/twitter"
+  },
+  "discord": {
+    "url": "https://go.arthurdanjou.fr/discord"
+  },
+  "website": {
+    "personal": "https://arthurdanjou.fr",
+    "mcp": "https://mcp.arthurdanjou.fr",
+    "status": "https://go.arthurdanjou.fr/status"
+  }
+}

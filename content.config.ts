@@ -136,6 +136,33 @@ export default defineContentConfig({
         }),
         achievements: z.array(z.string())
       })
+    }),
+    socials: defineCollection({
+      type: 'page',
+      source: 'socials.json',
+      schema: z.object({
+        github: z.object({
+          username: z.string(),
+          url: z.string().url(),
+          stats: z.object({
+            note: z.string()
+          })
+        }),
+        linkedin: z.object({
+          url: z.string().url()
+        }),
+        twitter: z.object({
+          url: z.string().url()
+        }),
+        discord: z.object({
+          url: z.string().url()
+        }),
+        website: z.object({
+          personal: z.string().url(),
+          mcp: z.string().url(),
+          status: z.string().url()
+        })
+      })
     })
   }
 })
