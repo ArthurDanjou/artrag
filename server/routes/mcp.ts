@@ -300,6 +300,25 @@ function createServer() {
     }
   )
 
+  server.registerPrompt(
+    'artmcp-projects',
+    {
+      title: 'Get Projects Done by Arthur Danjou',
+      description: 'Get a list of projects done by Arthur Danjou'
+    },
+    async () => {
+      return {
+        messages: [{
+          role: 'user',
+          content: {
+            type: 'text',
+            text: `Provide me a list of projects done by Arthur Danjou.`
+          }
+        }]
+      }
+    }
+  )
+
   return server
 }
 
