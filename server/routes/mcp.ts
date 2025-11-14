@@ -1,6 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
-import { z } from '@nuxt/content'
+import { z } from 'zod'
 
 function createServer() {
   const server = new McpServer({
@@ -111,10 +111,11 @@ function createServer() {
       title: 'Get Resume Link',
       description: 'Provide a link to download Arthur Danjou\'s resume in the requested language.',
       inputSchema: {
+        // @ts-expect-error zod inference issue
         lang: z.enum(['en', 'fr']).describe('The language for the resume, \'en\' or \'fr\'.')
       }
     },
-    async ({ lang }) => {
+    async ({ lang }: { lang: 'en' | 'fr' }) => {
       const base_url = import.meta.dev ? 'http://localhost:3000/api' : 'https://mcp.arthurdanjou.fr/api'
       const url = `${base_url}/resumes/${lang}`
       return {
@@ -130,10 +131,11 @@ function createServer() {
       title: 'Get Resume of Arthur Danjou',
       description: 'Get Resume in French or English format of Arthur Danjou',
       argsSchema: {
+        // @ts-expect-error zod inference issue
         lang: z.enum(['en', 'fr']).describe('The language for the resume, \'en\' or \'fr\'.')
       }
     },
-    async ({ lang }) => {
+    async ({ lang }: { lang: 'en' | 'fr' }) => {
       return {
         messages: [{
           role: 'user',
