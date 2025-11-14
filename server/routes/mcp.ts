@@ -147,7 +147,7 @@ function createServer() {
     'resource://artmcp/contact',
     {
       title: 'ArtMCP Contact',
-      description: 'Get Contact Information of Arthur Danjou'
+      description: 'Get Contact Information and Social Links of Arthur Danjou including email, LinkedIn, GitHub, Twitter, Discord, and websites'
     },
     async (uri) => {
       const result = await $fetch('/api/contact')
@@ -246,25 +246,6 @@ function createServer() {
     },
     async (uri) => {
       const result = await $fetch('/api/profile')
-      return {
-        contents: [{
-          uri: uri.href,
-          mimeType: 'application/json',
-          text: JSON.stringify(result, null, 2)
-        }]
-      }
-    }
-  )
-
-  server.registerResource(
-    'artmcp-socials',
-    'resource://artmcp/socials',
-    {
-      title: 'ArtMCP Social Links',
-      description: 'Get social media profiles and online presence of Arthur Danjou'
-    },
-    async (uri) => {
-      const result = await $fetch('/api/socials')
       return {
         contents: [{
           uri: uri.href,
@@ -379,8 +360,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-contact',
     {
-      title: 'Get Contact Information of Arthur Danjou',
-      description: 'Get Contact Information of Arthur Danjou'
+      title: 'Get Contact Information and Social Links of Arthur Danjou',
+      description: 'Get Contact Information and Social Links of Arthur Danjou including email, social media, and websites'
     },
     async () => {
       return {
@@ -388,7 +369,7 @@ function createServer() {
           role: 'user',
           content: {
             type: 'text',
-            text: `How can I contact Arthur Danjou?`
+            text: `How can I contact Arthur Danjou? Provide all contact methods and social links.`
           }
         }]
       }
@@ -547,25 +528,6 @@ function createServer() {
           content: {
             type: 'text',
             text: `Provide me comprehensive profile information about Arthur Danjou including his bio, location, availability, career goals, and work preferences.`
-          }
-        }]
-      }
-    }
-  )
-
-  server.registerPrompt(
-    'artmcp-socials',
-    {
-      title: 'Get Social Media Links of Arthur Danjou',
-      description: 'Get social media profiles and online presence'
-    },
-    async () => {
-      return {
-        messages: [{
-          role: 'user',
-          content: {
-            type: 'text',
-            text: `What are Arthur Danjou's social media profiles and online presence?`
           }
         }]
       }

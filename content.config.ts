@@ -80,7 +80,8 @@ export default defineContentConfig({
         body: z.array(z.object({
           name: z.string(),
           icon: z.string().optional(),
-          value: z.string().url()
+          value: z.string().url(),
+          username: z.string().optional()
         }))
       })
     }),
@@ -135,33 +136,6 @@ export default defineContentConfig({
           roles: z.array(z.string())
         }),
         achievements: z.array(z.string())
-      })
-    }),
-    socials: defineCollection({
-      type: 'page',
-      source: 'socials.json',
-      schema: z.object({
-        github: z.object({
-          username: z.string(),
-          url: z.string().url(),
-          stats: z.object({
-            note: z.string()
-          })
-        }),
-        linkedin: z.object({
-          url: z.string().url()
-        }),
-        twitter: z.object({
-          url: z.string().url()
-        }),
-        discord: z.object({
-          url: z.string().url()
-        }),
-        website: z.object({
-          personal: z.string().url(),
-          mcp: z.string().url(),
-          status: z.string().url()
-        })
       })
     })
   }

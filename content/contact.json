@@ -18,7 +18,8 @@
         {
             "name": "GitHub",
             "icon": "i-ph:github-logo-duotone",
-            "value": "https://go.arthurdanjou.fr/github"
+            "value": "https://go.arthurdanjou.fr/github",
+            "username": "ArthurDanjou"
         },
         {
             "name": "Twitter",
@@ -29,6 +30,21 @@
             "name": "Discord",
             "icon": "i-ph:discord-logo-duotone",
             "value": "https://go.arthurdanjou.fr/discord"
+        },
+        {
+            "name": "Personal Website",
+            "icon": "i-ph:globe-duotone",
+            "value": "https://arthurdanjou.fr"
+        },
+        {
+            "name": "MCP Server",
+            "icon": "i-ph:globe-duotone",
+            "value": "https://mcp.arthurdanjou.fr"
+        },
+        {
+            "name": "Status Page",
+            "icon": "i-ph:activity-duotone",
+            "value": "https://go.arthurdanjou.fr/status"
         }
     ]
 }
