@@ -18,6 +18,7 @@ export default defineNuxtConfig({
       id: '',
       token: ''
     },
+    statusPage: '',
     wakatime: {
       userId: '',
       coding: '',

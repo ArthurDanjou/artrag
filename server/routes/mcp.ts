@@ -180,6 +180,25 @@ function createServer() {
     }
   )
 
+  server.registerResource(
+    'artmcp-status_page',
+    'resource://artmcp/status_page',
+    {
+      title: 'ArtMCP Status Page',
+      description: 'Get Status Page Activity of Arthur Danjou\'s Homelab including uptime and incidents, powered by UptimeKuma'
+    },
+    async (uri) => {
+      const result = await $fetch('/api/status_page')
+      return {
+        contents: [{
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify(result, null, 2)
+        }]
+      }
+    }
+  )
+
   // Tools
   server.registerTool(
     'get_resume_link',
@@ -358,7 +377,7 @@ function createServer() {
   )
 
   server.registerPrompt(
-    'get_uses_by_category',
+    'artmcp-get_uses_by_category',
     {
       title: 'Get Uses by Category',
       description: 'Retrieves uses Arthur Danjou uses filtered by a specific category.',
@@ -378,6 +397,25 @@ function createServer() {
             }
           }
         ]
+      }
+    }
+  )
+
+  server.registerPrompt(
+    'artmcp-status_page',
+    {
+      title: 'Get Status Page Activity of Arthur Danjou\'s Homelab',
+      description: 'Get Status Page Activity of Arthur Danjou\'s Homelab including uptime and incidents, powered by UptimeKuma'
+    },
+    async () => {
+      return {
+        messages: [{
+          role: 'user',
+          content: {
+            type: 'text',
+            text: `Provide me the status page activity of Arthur Danjou's homelab, including uptime and incidents.`
+          }
+        }]
       }
     }
   )
