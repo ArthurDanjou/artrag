@@ -4,17 +4,17 @@ import { z } from 'zod'
 
 function createServer() {
   const server = new McpServer({
-    name: 'nuxt-ui',
+    name: 'artmcp',
     version: '1.0.0'
   })
 
-  // Ressources
+  // Resources
   server.registerResource(
     'artmcp-skills',
     'resource://artmcp/skills',
     {
-      title: 'ArtMCP Skills',
-      description: 'Complete list of skills of Arthur Danjou'
+      title: 'Arthur Danjou - Skills',
+      description: 'A comprehensive list of technical skills, programming languages, frameworks, and tools mastered by Arthur Danjou'
     },
     async (uri) => {
       const result = await $fetch('/api/skills')
@@ -32,8 +32,8 @@ function createServer() {
     'artmcp-experiences',
     'resource://artmcp/experiences',
     {
-      title: 'ArtMCP Experiences',
-      description: 'Complete list of experiences of Arthur Danjou'
+      title: 'Arthur Danjou - Professional Experiences',
+      description: 'A detailed list of Arthur Danjou\'s professional work experiences, including roles, companies, and responsibilities'
     },
     async (uri) => {
       const result = await $fetch('/api/experiences')
@@ -51,8 +51,8 @@ function createServer() {
     'artmcp-projects',
     'resource://artmcp/projects',
     {
-      title: 'ArtMCP Projects',
-      description: 'Complete list of projects of Arthur Danjou'
+      title: 'Arthur Danjou - Projects Portfolio',
+      description: 'A comprehensive collection of projects developed by Arthur Danjou, showcasing technical skills and achievements'
     },
     async (uri) => {
       const result = await $fetch('/api/projects')
@@ -70,8 +70,8 @@ function createServer() {
     'artmcp-uses',
     'resource://artmcp/uses',
     {
-      title: 'ArtMCP Uses',
-      description: 'Complete list of uses of Arthur Danjou filtered by categories'
+      title: 'Arthur Danjou - Tech Stack & Tools',
+      description: 'A curated list of tools, software, and hardware used by Arthur Danjou, organized by categories (homelab, IDE, hardware, software)'
     },
     async (uri) => {
       const result = await $fetch('/api/uses')
@@ -89,8 +89,8 @@ function createServer() {
     'artmcp-education',
     'resource://artmcp/education',
     {
-      title: 'ArtMCP Education',
-      description: 'Complete list of education of Arthur Danjou'
+      title: 'Arthur Danjou - Education & Academic Background',
+      description: 'Arthur Danjou\'s educational background, including degrees, institutions, and academic achievements'
     },
     async (uri) => {
       const result = await $fetch('/api/educations')
@@ -108,8 +108,8 @@ function createServer() {
     'artmcp-activity',
     'resource://artmcp/activity',
     {
-      title: 'ArtMCP Activity',
-      description: 'Get realtime activity of Arthur Danjou'
+      title: 'Arthur Danjou - Real-time Activity',
+      description: 'Real-time current activity and status of Arthur Danjou, including what he\'s currently working on'
     },
     async (uri) => {
       const result = await $fetch('/api/activity')
@@ -127,8 +127,8 @@ function createServer() {
     'artmcp-wakatime',
     'resource://artmcp/wakatime',
     {
-      title: 'ArtMCP Wakatime',
-      description: 'Get Wakatime statistics of Arthur Danjou'
+      title: 'Arthur Danjou - Coding Statistics',
+      description: 'Detailed coding statistics and analytics from WakaTime, including programming languages, time spent coding, and productivity metrics'
     },
     async (uri) => {
       const result = await $fetch('/api/wakatime')
@@ -146,8 +146,8 @@ function createServer() {
     'artmcp-contact',
     'resource://artmcp/contact',
     {
-      title: 'ArtMCP Contact',
-      description: 'Get Contact Information of Arthur Danjou'
+      title: 'Arthur Danjou - Contact Information',
+      description: 'Contact details for Arthur Danjou, including email, social media profiles, and other communication channels'
     },
     async (uri) => {
       const result = await $fetch('/api/contact')
@@ -162,11 +162,11 @@ function createServer() {
   )
 
   server.registerResource(
-    'artmcp-contact',
+    'artmcp-hobbies',
     'resource://artmcp/hobbies',
     {
-      title: 'ArtMCP Hobbies',
-      description: 'Get Hobbies Information of Arthur Danjou'
+      title: 'Arthur Danjou - Hobbies & Interests',
+      description: 'Arthur Danjou\'s personal hobbies, interests, and passions outside of professional work'
     },
     async (uri) => {
       const result = await $fetch('/api/hobbies')
@@ -184,8 +184,8 @@ function createServer() {
     'artmcp-status_page',
     'resource://artmcp/status_page',
     {
-      title: 'ArtMCP Status Page',
-      description: 'Get Status Page Activity of Arthur Danjou\'s Homelab including uptime and incidents, powered by UptimeKuma'
+      title: 'Arthur Danjou - Homelab Status Page',
+      description: 'Real-time status, uptime monitoring, and incident reports for Arthur Danjou\'s homelab infrastructure, powered by UptimeKuma'
     },
     async (uri) => {
       const result = await $fetch('/api/status_page')
@@ -203,11 +203,11 @@ function createServer() {
   server.registerTool(
     'get_resume_link',
     {
-      title: 'Get Resume Link',
-      description: 'Provide a link to download Arthur Danjou\'s resume in the requested language.',
+      title: 'Get Resume Download Link',
+      description: 'Retrieves a direct download link to Arthur Danjou\'s professional resume in the specified language (English or French).',
       inputSchema: {
         // @ts-expect-error - need to wait for support for zod 4
-        lang: z.enum(['en', 'fr']).describe('The language for the resume, \'en\' or \'fr\'.')
+        lang: z.enum(['en', 'fr']).describe('The language for the resume: \'en\' for English or \'fr\' for French.')
       }
     },
     async ({ lang }: { lang: 'en' | 'fr' }) => {
@@ -222,11 +222,11 @@ function createServer() {
   server.registerTool(
     'get_uses_by_category',
     {
-      title: 'Get Uses by Category',
-      description: 'Retrieves uses Arthur Danjou uses filtered by a specific category.',
+      title: 'Get Tools by Category',
+      description: 'Retrieves a filtered list of tools, software, and hardware used by Arthur Danjou for a specific category (homelab, IDE, hardware, or software).',
       inputSchema: {
         // @ts-expect-error - need to wait for support for zod 4
-        categoryName: z.enum(['homelab', 'ide', 'hardware', 'software']).describe('The name of the category to filter uses by.')
+        categoryName: z.enum(['homelab', 'ide', 'hardware', 'software']).describe('The category to filter by: \'homelab\', \'ide\', \'hardware\', or \'software\'.')
       }
     },
     async (params: { categoryName: 'homelab' | 'ide' | 'hardware' | 'software' }) => {
@@ -242,11 +242,11 @@ function createServer() {
   server.registerPrompt(
     'artmcp-resume',
     {
-      title: 'Get Resume of Arthur Danjou',
-      description: 'Get Resume in French or English format of Arthur Danjou',
+      title: 'Request Arthur Danjou\'s Resume',
+      description: 'Generate a prompt to retrieve Arthur Danjou\'s professional resume in English or French format.',
       argsSchema: {
         // @ts-expect-error - need to wait for support for zod 4
-        lang: z.enum(['en', 'fr']).describe('The language for the resume, \'en\' or \'fr\'.')
+        lang: z.enum(['en', 'fr']).describe('The language for the resume: \'en\' for English or \'fr\' for French.')
       }
     },
     async ({ lang }: { lang: 'en' | 'fr' }) => {
@@ -265,8 +265,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-activity',
     {
-      title: 'Get Realtime Activity of Arthur Danjou',
-      description: 'Get Realtime Activity of Arthur Danjou'
+      title: 'Request Real-time Activity',
+      description: 'Generate a prompt to retrieve Arthur Danjou\'s current real-time activity and status.'
     },
     async () => {
       return {
@@ -284,8 +284,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-wakatime',
     {
-      title: 'Get Stats of Arthur Danjou',
-      description: 'Get Stats of Arthur Danjou powered by Wakatime'
+      title: 'Request Coding Statistics',
+      description: 'Generate a prompt to retrieve Arthur Danjou\'s coding statistics and analytics from WakaTime.'
     },
     async () => {
       return {
@@ -303,8 +303,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-contact',
     {
-      title: 'Get Contact Information of Arthur Danjou',
-      description: 'Get Contact Information of Arthur Danjou'
+      title: 'Request Contact Information',
+      description: 'Generate a prompt to retrieve Arthur Danjou\'s contact details and communication channels.'
     },
     async () => {
       return {
@@ -322,8 +322,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-hobbies',
     {
-      title: 'Get Hobbies Information of Arthur Danjou',
-      description: 'Get Hobbies Information of Arthur Danjou'
+      title: 'Request Hobbies & Interests',
+      description: 'Generate a prompt to learn about Arthur Danjou\'s personal hobbies, interests, and passions.'
     },
     async () => {
       return {
@@ -341,8 +341,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-projects',
     {
-      title: 'Get Projects Done by Arthur Danjou',
-      description: 'Get a list of projects done by Arthur Danjou'
+      title: 'Request Projects Portfolio',
+      description: 'Generate a prompt to retrieve a comprehensive list of projects developed by Arthur Danjou.'
     },
     async () => {
       return {
@@ -360,8 +360,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-skills',
     {
-      title: 'Get Skills of Arthur Danjou',
-      description: 'Get a list of skills that Arthur Danjou masters'
+      title: 'Request Skills List',
+      description: 'Generate a prompt to retrieve a comprehensive list of technical skills mastered by Arthur Danjou.'
     },
     async () => {
       return {
@@ -379,11 +379,11 @@ function createServer() {
   server.registerPrompt(
     'artmcp-get_uses_by_category',
     {
-      title: 'Get Uses by Category',
-      description: 'Retrieves uses Arthur Danjou uses filtered by a specific category.',
+      title: 'Request Tools by Category',
+      description: 'Generate a prompt to retrieve tools and software used by Arthur Danjou, filtered by a specific category.',
       argsSchema: {
         // @ts-expect-error - need to wait for support for zod 4
-        categoryName: z.enum(['homelab', 'ide', 'hardware', 'software']).describe('Type of project (dashboard, landing page, admin panel, etc.)')
+        categoryName: z.enum(['homelab', 'ide', 'hardware', 'software']).describe('The category to filter by: \'homelab\', \'ide\', \'hardware\', or \'software\'.')
       }
     },
     async ({ categoryName }) => {
@@ -404,8 +404,8 @@ function createServer() {
   server.registerPrompt(
     'artmcp-status_page',
     {
-      title: 'Get Status Page Activity of Arthur Danjou\'s Homelab',
-      description: 'Get Status Page Activity of Arthur Danjou\'s Homelab including uptime and incidents, powered by UptimeKuma'
+      title: 'Request Homelab Status',
+      description: 'Generate a prompt to retrieve the status page of Arthur Danjou\'s homelab, including uptime and incident reports.'
     },
     async () => {
       return {
