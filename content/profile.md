@@ -1,3 +1,8 @@
+---
+title: Arthur Danjou - Data Science & Applied AI Student.
+description: Profile of Arthur Danjou, a Data Science and Applied AI student at Paris Dauphine-PSL University, highlighting his skills, experience, and career aspirations.
+---
+
 # Arthur Danjou
 **Data Science & Applied AI**
 
