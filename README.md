@@ -26,7 +26,7 @@ The server exposes the following resources through the Model Context Protocol:
 ### MCP Tools
 
 - **`get_resume_link`** - Get download link for resume in English or French
-- **`get_uses_by_category`** - Filter uses by category (homelab, ide, hardware, software)
+- **`get-uses-by-category`** - Filter uses by category (homelab, ide, hardware, software)
 
 ### MCP Prompts
 
@@ -119,7 +119,7 @@ All resources are also available as REST API endpoints:
 - `GET /api/hobbies`
 - `GET /api/contact`
 - `GET /api/uses`
-- `GET /api/uses_by_category?categoryName={category}`
+- `GET /api/uses-by-category?categoryName={category}`
 - `GET /api/activity`
 - `GET /api/wakatime`
 - `GET /api/status_page`

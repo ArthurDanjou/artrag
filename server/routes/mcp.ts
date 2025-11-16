@@ -258,7 +258,7 @@ function createServer() {
   )
 
   server.registerTool(
-    'get_uses_by_category',
+    'get-uses-by-category',
     {
       title: 'Get Arthur Danjou\'s Tools by Category',
       description: 'Retrieves a filtered list of tools, software, and hardware used by Arthur Danjou based on a specific category. Available categories: homelab, IDE, hardware, and software.',
@@ -268,7 +268,7 @@ function createServer() {
       }
     },
     async (params: { categoryName: 'homelab' | 'ide' | 'hardware' | 'software' }) => {
-      const result = await $fetch<unknown>('/api/uses_by_category', { query: params })
+      const result = await $fetch<unknown>('/api/uses-by-category', { query: params })
       return {
         content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
         structuredContent: result as unknown
@@ -415,7 +415,7 @@ function createServer() {
   )
 
   server.registerPrompt(
-    'artmcp-get_uses_by_category',
+    'artmcp-get-uses-by-category',
     {
       title: 'Request Arthur Danjou\'s Tools by Category',
       description: 'Generates a prompt to retrieve tools, software, and hardware used by Arthur Danjou, filtered by a specific category (homelab, IDE, hardware, or software).',
