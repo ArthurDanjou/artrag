@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 
 export default defineMcpTool({
   description: 'Retrieves a filtered list of tools, software, and hardware used by Arthur Danjou based on a specific category. Available categories: homelab, IDE, hardware, and software.',

@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 
 export default defineMcpTool({
   description: 'Retrieves a direct download link to Arthur Danjou\'s professional resume in the specified language. Supports both English and French versions.',

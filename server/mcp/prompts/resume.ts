@@ -1,4 +1,4 @@
-import z from 'zod'
+import { z } from 'zod'
 
 export default defineMcpPrompt({
   description: 'Generates a prompt to request and retrieve Arthur Danjou\'s professional resume in the specified language (English or French).',
