@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     '@nuxthub/core',
     '@nuxt/eslint',
     '@nuxt/content',
-    '@nuxtjs/mcp-toolkit'
+    '@nuxtjs/mcp-toolkit',
+    'nuxt-studio'
   ],
 
   devtools: {
@@ -65,5 +66,15 @@ export default defineNuxtConfig({
   mcp: {
     name: 'ArtMCP',
     version: '1.0.0'
+  },
+
+  studio: {
+    // Git repository configuration (owner and repo are required)
+    repository: {
+      provider: 'github', // 'github' or 'gitlab'
+      owner: 'arthurdanjou', // your GitHub/GitLab username or organization
+      repo: 'artmcp', // your repository name
+      branch: 'master' // the branch to commit to (default: 'main')
+    }
   }
 })
