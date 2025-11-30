@@ -103,6 +103,10 @@ export default defineContentConfig({
     profile: defineCollection({
       type: 'page',
       source: 'profile.md'
+    }),
+    documentation: defineCollection({
+      type: 'page',
+      source: 'documentation.md'
     })
   }
 })
