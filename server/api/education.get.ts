@@ -4,12 +4,12 @@ export default defineEventHandler(async (event) => {
     .all()
 
   return result
-    .sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
-    .map(edu => ({
-      degree: edu.degree,
-      institution: edu.institution,
-      startDate: edu.startDate,
-      endDate: edu.endDate,
-      location: edu.location
+    .sort((a, b) => new Date(b.meta.startDate).getTime() - new Date(a.meta.startDate).getTime())
+    .map((edu) => ({
+      degree: edu.meta.degree,
+      institution: edu.meta.institution,
+      startDate: edu.meta.startDate,
+      endDate: edu.meta.endDate,
+      location: edu.meta.location
     }))
 })

@@ -4,14 +4,14 @@ export default defineEventHandler(async (event) => {
     .all()
 
   return result
-    .sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
+    .sort((a, b) => new Date(b.meta.startDate).getTime() - new Date(a.meta.startDate).getTime())
     .map(exp => ({
-      title: exp.title,
-      company: exp.company,
-      companyUrl: exp.companyUrl,
-      startDate: exp.startDate,
-      endDate: exp.endDate,
-      location: exp.location,
-      description: exp.description
+      title: exp.meta.title,
+      company: exp.meta.company,
+      companyUrl: exp.meta.companyUrl,
+      startDate: exp.meta.startDate,
+      endDate: exp.meta.endDate,
+      location: exp.meta.location,
+      description: exp.meta.description
     }))
 })
