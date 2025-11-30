@@ -10,12 +10,13 @@ export default defineMcpTool({
 
     const result = await queryCollection(event, 'uses')
       .where('extension', '=', 'md')
-      .where('category', '=', categoryName)
       .all()
 
+    const uses = result.filter(use => use.meta.category === categoryName)
+
     return {
-      content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
-      structuredContent: result as { [key: string]: unknown }
+      content: [{ type: 'text', text: JSON.stringify(uses, null, 2) }],
+      structuredContent: uses as { [key: string]: unknown }
     }
   }
 })
