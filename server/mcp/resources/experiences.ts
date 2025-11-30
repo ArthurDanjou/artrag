@@ -4,21 +4,7 @@ export default defineMcpResource({
   uri: 'resource://artmcp/experiences',
   cache: '1 hour',
   handler: async (uri: URL) => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'experiences')
-      .where('extension', '=', 'md')
-      .select([
-        'title',
-        'company',
-        'companyUrl',
-        'startDate',
-        'endDate',
-        'location',
-        'description'
-      ])
-      .orderBy('startDate', 'desc')
-      .all()
+    const result = await $fetch('/api/experiences')
 
     return {
       contents: [{

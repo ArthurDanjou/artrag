@@ -4,19 +4,7 @@ export default defineMcpResource({
   uri: 'resource://artmcp/education',
   cache: '1 hour',
   handler: async (uri: URL) => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'education')
-      .where('extension', '=', 'md')
-      .select([
-        'degree',
-        'institution',
-        'startDate',
-        'endDate',
-        'location'
-      ])
-      .orderBy('startDate', 'desc')
-      .all()
+    const result = await $fetch('/api/education')
 
     return {
       contents: [{

@@ -4,17 +4,13 @@ export default defineMcpResource({
   uri: 'resource://artmcp/languages',
   cache: '1 hour',
   handler: async (uri: URL) => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'languages')
-      .where('extension', '=', 'json')
-      .first()
+    const result = await $fetch('/api/languages')
 
     return {
       contents: [{
         uri: uri.toString(),
         mimeType: 'text/json',
-        text: JSON.stringify(result.body, null, 2)
+        text: JSON.stringify(result, null, 2)
       }]
     }
   }
