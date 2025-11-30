@@ -1,5 +1,11 @@
 export default defineNuxtConfig({
-  modules: ['@nuxthub/core', '@nuxt/eslint', '@nuxt/content'],
+
+  modules: [
+    '@nuxthub/core',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    '@nuxtjs/mcp-toolkit'
+  ],
 
   devtools: {
     enabled: true,
@@ -29,6 +35,9 @@ export default defineNuxtConfig({
   },
 
   future: { compatibilityVersion: 4 },
+  experimental: {
+    asyncContext: true
+  },
   compatibilityDate: '2025-11-12',
 
   nitro: {
@@ -51,5 +60,10 @@ export default defineNuxtConfig({
         commaDangle: 'never'
       }
     }
+  },
+
+  mcp: {
+    name: 'ArtMCP',
+    version: '1.0.0'
   }
 })
