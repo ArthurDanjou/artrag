@@ -4,11 +4,7 @@ export default defineMcpResource({
   uri: 'resource://artmcp/profile',
   cache: '1 hour',
   handler: async (uri: URL) => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'profile')
-      .where('extension', '=', 'md')
-      .first()
+    const result = await $fetch('/api/profile')
 
     return {
       contents: [{

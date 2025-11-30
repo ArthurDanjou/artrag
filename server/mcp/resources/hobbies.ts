@@ -4,17 +4,13 @@ export default defineMcpResource({
   uri: 'resource://artmcp/hobbies',
   cache: '1 hour',
   handler: async (uri: URL) => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'hobbies')
-      .where('extension', '=', 'md')
-      .first()
+    const result = await $fetch('/api/hobbies')
 
     return {
       contents: [{
         uri: uri.toString(),
         mimeType: 'text/json',
-        text: JSON.stringify(result.body, null, 2)
+        text: JSON.stringify(result, null, 2)
       }]
     }
   }

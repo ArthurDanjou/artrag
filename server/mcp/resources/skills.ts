@@ -3,18 +3,14 @@ export default defineMcpResource({
   description: 'A comprehensive list of technical skills, programming languages, frameworks, and tools mastered by Arthur Danjou',
   cache: '1 hour',
   uri: 'resource://artmcp/skills',
-  handler: async () => {
-    const event = useEvent()
-
-    const result = await queryCollection(event, 'skills')
-      .where('extension', '=', 'json')
-      .first()
+  handler: async (uri: URL) => {
+    const result = await $fetch('/api/skills')
 
     return {
       contents: [{
-        uri: result.path,
+        uri: uri.toString(),
         mimeType: 'text/json',
-        text: JSON.stringify(result.body, null, 2)
+        text: JSON.stringify(result, null, 2)
       }]
     }
   }
