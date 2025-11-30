@@ -69,6 +69,7 @@ export default defineNuxtConfig({
   },
 
   studio: {
+    route: '/studio',
     // Git repository configuration (owner and repo are required)
     repository: {
       provider: 'github', // 'github' or 'gitlab'
