@@ -19,14 +19,15 @@ The server exposes the following resources through the Model Context Protocol:
 - **🎨 Hobbies** (`resource://artmcp/hobbies`) - Personal interests and activities
 - **📞 Contact** (`resource://artmcp/contact`) - Professional contact information and social links
 - **🛠️ Uses** (`resource://artmcp/uses`) - Tools, hardware, and software setup
-- **📈 Activity** (`resource://artmcp/activity`) - Real-time coding activity (Discord integration)
-- **⏱️ Wakatime** (`resource://artmcp/wakatime`) - Coding statistics powered by Wakatime
-- **🏠 Status Page** (`resource://artmcp/status_page`) - Homelab services uptime and incidents
 
 ### MCP Tools
 
-- **`get_resume_link`** - Get download link for resume in English or French
-- **`get-uses-by-category`** - Filter uses by category (homelab, ide, hardware, software)
+- **`activity`** - Real-time current activity and status of Arthur Danjou
+- **`resume-link`** - Get download link for resume in English or French
+- **`stats`** - Detailed coding statistics and analytics from WakaTime
+- **`status-page`** - Real-time status and uptime monitoring for homelab infrastructure
+- **`uses-by-category`** - Filter uses by category (homelab, ide, hardware, software)
+- **`weather`** - Get current weather for a city
 
 ### MCP Prompts
 
@@ -43,8 +44,9 @@ Pre-configured prompts for common queries about:
 This project uses:
 - **Nuxt 4** with Nitro for server-side rendering
 - **@nuxt/content** for content management
-- **@modelcontextprotocol/sdk** for MCP server implementation
+- **@nuxtjs/mcp-toolkit** for MCP server implementation
 - **NuxtHub** for edge deployment on Cloudflare Workers
+- **nuxt-studio** for content management studio
 - **Zod** for schema validation
 
 ## 🚀 Getting Started
@@ -113,16 +115,15 @@ All resources are also available as REST API endpoints:
 - `GET /api/skills`
 - `GET /api/experiences`
 - `GET /api/projects`
-- `GET /api/educations`
+- `GET /api/education`
 - `GET /api/languages`
 - `GET /api/profile`
 - `GET /api/hobbies`
 - `GET /api/contact`
 - `GET /api/uses`
-- `GET /api/uses-by-category?categoryName={category}`
 - `GET /api/activity`
 - `GET /api/wakatime`
-- `GET /api/status_page`
+- `GET /api/status-page`
 - `GET /api/resumes/{en|fr}` - Download resume
 
 ## 🧪 Development
@@ -147,9 +148,10 @@ Content is managed in the `content/` directory:
 content/
 ├── skills.json              # Technical skills
 ├── languages.json           # Spoken languages
-├── profile.json             # Comprehensive profile info
+├── profile.md               # Comprehensive profile info
 ├── contact.json             # Contact information
 ├── hobbies.md               # Personal interests
+├── documentation.md         # MCP documentation
 ├── experiences/*.md         # Work experiences
 ├── projects/*.md            # Project portfolio
 ├── education/*.md           # Academic background
@@ -159,8 +161,9 @@ content/
 ## 🔧 Technologies
 
 - **Frontend/Backend**: Nuxt 4, Vue 3, Nitro
-- **MCP**: Model Context Protocol SDK
+- **MCP**: @nuxtjs/mcp-toolkit
 - **Content**: Nuxt Content with better-sqlite3
+- **Content Studio**: nuxt-studio
 - **Deployment**: Cloudflare Workers via NuxtHub
 - **Validation**: Zod schemas
 
@@ -193,7 +196,7 @@ Private project - All rights reserved
 ## 👤 About
 
 **Arthur Danjou**
-- Developer enjoying Artificial Intelligence and Machine Learning. Mathematics Student at Paris Dauphine-PSL University specialised in Statistics
+- Data Science & Applied AI student at Paris Dauphine-PSL University, passionate about machine learning and mathematical modelling
 - 📍 Paris, France
 - 🔗 [LinkedIn](https://go.arthurdanjou.fr/linkedin)
 - 🐙 [GitHub](https://go.arthurdanjou.fr/github)
