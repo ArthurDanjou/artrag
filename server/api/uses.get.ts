@@ -1,4 +1,4 @@
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   const categories = await queryCollection(event, 'usesCategories')
     .where('extension', '=', 'md')
     .all()
@@ -16,4 +16,8 @@ export default defineEventHandler(async (event) => {
   }
 
   return uses_by_categories
+},
+{
+  maxAge: 60 * 60 * 24,
+  name: 'uses'
 })
